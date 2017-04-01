@@ -7,20 +7,8 @@ angular.module('triviaApp').controller('mainCtrl', function($scope, triviaServic
     })
   }
 
-  $scope.getEasyQuestions = function() {
-    triviaService.getEasyQuestions().then(function(response) {
-      $scope.questions = response;
-    })
-  }
-
-  $scope.getMediumQuestions = function() {
-    triviaService.getMediumQuestions().then(function(response) {
-      $scope.questions = response;
-    })
-  }
-
-  $scope.getHardQuestions = function() {
-    triviaService.getHardQuestions().then(function(response) {
+  $scope.getQuestionsWithDifficulty = function(difficulty) {
+    triviaService.getQuestionsWithDifficulty(difficulty).then(function(response) {
       $scope.questions = response;
     })
   }

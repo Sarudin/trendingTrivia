@@ -11,16 +11,16 @@
 
 <body ng-controller="mainCtrl">
   <header>
-    <div>{{ questions }}</div>
+    <div></div>
     <h1>Trivia Trends</h1>
     <button><span>+</span> Add Question</button>
   </header>
   <article>
     <nav>
       <a ng-click="getAllQuestions()">All Questions</a>
-      <a ng-click="getEasyQuestions()">Easy</a>
-      <a ng-click="getMediumQuestions()">Medium</a>
-      <a ng-click="getHardQuestions()">Hard</a>
+      <a ng-click="getQuestionsWithDifficulty(1)">Easy</a>
+      <a ng-click="getQuestionsWithDifficulty(2)">Medium</a>
+      <a ng-click="getQuestionsWithDifficulty(3)">Hard</a>
       <a>Search by Animal</a>
     </nav>
     <div class="search">
@@ -28,6 +28,13 @@
     </div>
 
     <!-- Questions go here -->
+    <div class="question-wrapper ng-scope" ng-repeat="question in questions">
+      <b style="font-weight: bold;">{{ question.question }}</b>
+      <div ng-repeat="option in question.options">
+        {{ option }}
+      </div>
+
+    </div>
 
   </article>
 
