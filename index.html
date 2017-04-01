@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="triviaApp">
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="/styles/reset.css">
-  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/main.css">
   <title>Trivia Trends</title>
-  <link rel="shortcut icon" href="/styles/assets/crownFavicon.png">
+  <link rel="shortcut icon" href="./styles/assets/crownFavicon.png">
 </head>
 
-<body>
+<body ng-controller="mainCtrl">
   <header>
-    <div></div>
+    <div>{{ questions }}</div>
     <h1>Trivia Trends</h1>
     <button><span>+</span> Add Question</button>
   </header>
   <article>
     <nav>
-      <a>All Questions</a>
-      <a>Easy</a>
-      <a>Medium</a>
-      <a>Hard</a>
+      <a ng-click="getAllQuestions()">All Questions</a>
+      <a ng-click="getEasyQuestions()">Easy</a>
+      <a ng-click="getMediumQuestions()">Medium</a>
+      <a ng-click="getHardQuestions()">Hard</a>
       <a>Search by Animal</a>
     </nav>
     <div class="search">
@@ -34,30 +34,30 @@
   <div class="modal">
     <form>
       <h4 class="close">X</h4>
-      <span>Question</span><input type="text" ng-model="<!-- Question -->">
-      <span>Animal it's about</span><input type="text" ng-model="<!-- Animal -->">
+      <span>Question</span><input type="text" ng-model="placeholder">
+      <span>Animal it's about</span><input type="text" ng-model="placeholder">
       <span>Difficulty</span>
       <div class="range">
-        <input type="range" min="1" max="3" ng-model="<!-- Difficulty -->">
+        <input type="range" min="1" max="3" ng-model="placeholder">
 
         <h5>{{newQuestion.difficulty}}</h5>
       </div>
       <h4>Options</h4>
       <div>
-        <input type="radio" ng-model="" value="1">
-        <input type="text" ng-model="">
+        <input type="radio" ng-model="placeholder" value="1">
+        <input type="text" ng-model="placeholder">
       </div>
       <div>
-        <input type="radio" ng-model="" value="2">
-        <input type="text" ng-model="">
+        <input type="radio" ng-model="placeholder" value="2">
+        <input type="text" ng-model="placeholder">
       </div>
       <div>
-        <input type="radio" ng-model="" value="3">
-        <input type="text" ng-model="">
+        <input type="radio" ng-model="placeholder" value="3">
+        <input type="text" ng-model="placeholder">
       </div>
       <div>
-        <input type="radio" ng-model="" value="4">
-        <input type="text" ng-model="">
+        <input type="radio" ng-model="placeholder" value="4">
+        <input type="text" ng-model="placeholder">
       </div>
 
       <!--Add question buttons-->
@@ -81,7 +81,9 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js" charset="utf-8"></script>
-  <script src="./app.js" charset="utf-8"></script>
+  <script src="./app/js/app.js" charset="utf-8"></script>
+  <script src="./app/js/mainCtrl.js" charset="utf-8"></script>
+  <script src="./app/js/triviaService.js" charset="utf-8"></script>
 </body>
 
 </html>
