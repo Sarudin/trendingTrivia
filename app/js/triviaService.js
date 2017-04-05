@@ -14,4 +14,11 @@ angular.module('triviaApp').service('triviaService', function($http) {
       }
     })
   }
+
+  this.poseQuestion = function(questionObj) {
+    return $http({
+      method: 'POST',
+       
+    })
+  }
 });

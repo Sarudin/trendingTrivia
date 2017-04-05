@@ -12,4 +12,17 @@ angular.module('triviaApp').controller('mainCtrl', function($scope, triviaServic
       $scope.questions = response;
     })
   }
+
+  $mainService.postQuestion({
+    animal: 'panda',
+    correct_answer: 1,
+    date_entered: new Date(),
+    difficulty: 1,
+    options: {
+      1: 'yes',
+      2: 'no',
+      3: 'maybe',
+      4: 'kinda'
+    }
+  })
 });
